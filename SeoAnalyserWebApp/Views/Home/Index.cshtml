@@ -1,0 +1,89 @@
+﻿@model SeoAnalyserWebApp.Models.AnalyseModel
+
+@{
+    ViewBag.Title = "Seo Analyser";
+}
+
+<div class="jumbotron">
+    <h1>Seo Analyser</h1>
+    <p class="lead">You can perform a simple SEO analysis of the text in english or URL</p>
+</div>
+
+<div class="input-form">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <h3>Input :</h3>
+        <p class="textarea-form">
+            @Html.TextAreaFor(model => model.Input, new { @class = "textarea-full-width", @placeholder = "Please enter text in english or url" })
+        </p>
+        <p class="checkBox-group">
+            <label>
+                @Html.CheckBoxFor(model => model.FilterStopsWordsFlag, htmlAttributes: new { @checked = true })
+                @Html.DisplayName("Filter Stop Words")
+            </label><br>
+            <label>
+                @Html.CheckBoxFor(model => model.CalNumOfOccuranceOfWordsFlag, htmlAttributes: new { @checked = true })
+                @Html.DisplayName("Calculates number of occurrences on the page of each word")
+            </label><br>
+            <label>
+                @Html.CheckBoxFor(model => model.CalNumOfOccuranceOfWordsListedInMetaTagsFlag, htmlAttributes: new { @checked = true })
+                @Html.DisplayName("Calculates number of occurrences on the page of each word listed in meta tags")
+            </label><br>
+            <label>
+                @Html.CheckBoxFor(model => model.CalNumOfOccuranceOfExternalLinksFlag, htmlAttributes: new { @checked = true })
+                @Html.DisplayName("Calculates number of external links in the text")
+            </label><br>
+        </p>
+        <p>
+            <input type="submit" class="submit-button" value="Analyse" />
+        </p>
+    }
+</div>
+
+<div class="output-form">
+    @if (string.IsNullOrEmpty(Model.InvalidMessage) && Model.IsValid)
+    {
+        <h3>Output :</h3>
+        <div class="row">
+            @if (Model.CalNumOfOccuranceOfWordsFlag)
+            {
+                <div class="col-md-12">
+                    <h5>Occurrences on the page of each word</h5>
+                    @Html.Partial("Partial/OccuranceTable", Model.OccuranceOfWordsTable)
+                </div>
+            }
+
+            @if (Model.CalNumOfOccuranceOfWordsListedInMetaTagsFlag)
+            {
+                <div class="col-md-12">
+                    <h5>Occurrences on the page of each word listed in meta tags</h5>
+                    @Html.Partial("Partial/OccuranceTable", Model.OccuranceOfWordsInMetaTagsTable)
+                </div>
+            }
+
+            @if (Model.CalNumOfOccuranceOfExternalLinksFlag)
+            {
+                <div class="col-md-12">
+                    <h5>Occurrencesof external links in the text</h5>
+                    @Html.Partial("Partial/OccuranceTable", Model.OccuranceOfExternalLinksTable)
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        if (!string.IsNullOrEmpty(Model.InvalidMessage))
+        {
+            <h3>Exception :</h3>
+            <div class="exception-mesage">
+                @Html.DisplayTextFor(Model => Model.InvalidMessage)
+            </div>
+        }
+    }
+</div>
+
+@section scripts {
+    <script>
+        $('.table-bordered').DataTable();
+    </script>
+}

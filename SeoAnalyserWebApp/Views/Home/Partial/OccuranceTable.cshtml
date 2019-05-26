@@ -1,0 +1,28 @@
+﻿@model Dictionary<string, int>
+
+
+<div class="table">
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Word</th>
+                <th>Occurance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int count = 1;
+                foreach (KeyValuePair<string, int> item in Model)
+                {
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.Key</td>
+                        <td>@item.Value</td>
+                    </tr>
+                    count++;
+                }
+            }
+        </tbody>
+    </table>
+</div>
