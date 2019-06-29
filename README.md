@@ -11,11 +11,11 @@ you can use this tool to analyse your website content , and how is its visibilty
 
 <h2>Theory</h2>
 
-1. Filter Stops words
+1. Filter Stops words<br>
 [Stop word](https://en.wikipedia.org/wiki/Stop_words) is a commonly used word (such as “the”, “a”, “an”, “in”) that a search engine has been programmed to ignore
 
 
-2. Meta Tags
+2. Meta Tags<br>
 [Meta tags](https://www.wordstream.com/meta-tags) are snippets of text that describe a page’s content.
 The meta tags don’t appear on the page itself, but only in the page’s code
 
