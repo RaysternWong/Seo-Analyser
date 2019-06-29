@@ -1,0 +1,29 @@
+This is a simple demo for this project
+- Seo Analyser
+
+Search engine optimization (SEO) 
+is the process of increasing the 
+quality and quantity of website traffic 
+by increasing visibility of a website 
+or a web page to users of a web search engine
+
+Now I am going to run my project
+
+
+1. Filter Stop Words
+Stop word is a commonly used word (such as “the”, “a”, “an”, “in”) 
+that a search engine has been programmed to ignore.
+
+2. Word listed in meta tags
+Meta tags are snippets of text that describe a page’s content,
+the meta tags don’t appear on the page itself, 
+but only in the page’s code
+
+
+A. Given I analyse a paragraph
+I can get the number of occurance of words
+
+B. Given I anayse a link
+I can get all the details
+
+Thanks~~

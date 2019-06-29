@@ -9,13 +9,25 @@ if you would like improve the chance of your website being found by Search Engin
 you can use this tool to analyse your website content , and how is its visibilty to search engine.
 
 
+<h2>Theory</h2>
+
+<img src="https://github.com/Raydivine/Seo-Analyser/blob/master/Demo/WebPage.png" height="90%" width="90% />  <img src="https://github.com/Raydivine/IoT-of-Modern-Agriculture/blob/master/Doc/Image/Agriculture/farm%20monitor.jpg" width="45%" height="45%" />
+
+1. Filter Stops words
+
+[Stop word](https://en.wikipedia.org/wiki/Stop_words) is a commonly used word (such as “the”, “a”, “an”, “in”) that a search engine has been programmed to ignore
+
+
+2. Meta Tags
+[Meta tags](https://www.wordstream.com/meta-tags) are snippets of text that describe a page’s content.
+The meta tags don’t appear on the page itself, but only in the page’s code
+
+
 <h2>Demo</h2> 
 
-Please download this [demo video](https://en.wikipedia.org/wiki/Search_engine_optimization)
+Please download and watch this [demo video](https://github.com/Raydivine/Seo-Analyser/blob/master/Demo/Demo.mp4)
 
 
 <h2>Regards</h2>
 
 This project is welcome for anyone to <b>copy , modify and republish</b>. 
-
-
